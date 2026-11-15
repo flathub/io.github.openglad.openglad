@@ -107,21 +107,21 @@ modules:
       - -DFETCHCONTENT_SOURCE_DIR_LODEPNG=/run/build/openglad/deps/lodepng
       - -DFETCHCONTENT_SOURCE_DIR_LUA=/run/build/openglad/deps/lua
       - -DFETCHCONTENT_FULLY_DISCONNECTED=ON
-      - -DOPENGLAD_COMMIT_COUNT=1084
-      - -DOPENGLAD_GIT_HASH=e72a55c2
+      - -DOPENGLAD_COMMIT_COUNT=1098
+      - -DOPENGLAD_GIT_HASH=7dd61d2d
     post-install:
       - cp -r /run/build/openglad/packs /app/lib/openglad/packs
       - install -d /app/bin
       - ln -s ../lib/openglad/openglad /app/bin/openglad
       - ln -s ../lib/openglad/openscen /app/bin/openscen
-      - install -Dm644 /run/build/openglad/${FLATPAK_ID}.desktop -t /app/share/applications/
-      - install -Dm644 /run/build/openglad/${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo/
+      - install -Dm644 /run/build/openglad/packaging/linux/${FLATPAK_ID}.desktop -t /app/share/applications/
+      - install -Dm644 /run/build/openglad/packaging/linux/${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo/
       - install -Dm644 /run/build/openglad/${FLATPAK_ID}.svg -t /app/share/icons/hicolor/scalable/apps/
     sources:
       - type: git
         url: https://github.com/openglad/openglad.git
-        tag: v2.1084
-        commit: e72a55c2287d96681676e4ab03a97d40039aed46
+        tag: v2.1098
+        commit: 7dd61d2d77246131cd2da3d9d00ba0e2d44c9834
       - type: git
         url: https://github.com/lua/lua.git
         tag: v5.4.8
@@ -131,11 +131,5 @@ modules:
         url: https://github.com/lvandeve/lodepng.git
         commit: ed6fe5825c6a4fbb7f58ab35a4231c7543cd452a
         dest: deps/lodepng
-      - type: file
-        url: https://raw.githubusercontent.com/openglad/openglad/7a13d53530510fc3a8ec4281faf22ad8bf534700/packaging/linux/io.github.openglad.openglad.desktop
-        sha256: 2e79b1634cd66406cfab31e788684ee1d47d265ce1f1bf57edfe68c5e2c22e23
-      - type: file
-        url: https://raw.githubusercontent.com/openglad/openglad/7a13d53530510fc3a8ec4281faf22ad8bf534700/packaging/linux/io.github.openglad.openglad.metainfo.xml
-        sha256: 0ca4b56dd373a0fd4ab4bd2f380f44cc9701b52dabe7c28bea08a4d309677b9f
       - type: file
         path: io.github.openglad.openglad.svg
